@@ -10,11 +10,9 @@ import {
 
 export const workoutsKey = ["workouts"] as const;
 
+// Data lives in the browser (localStorage), so it is fetched client-side only.
 export function useWorkouts() {
-  return useQuery({ queryKey: workoutsKey, queryFn: getWorkouts, ssr: false } as never as {
-    queryKey: typeof workoutsKey;
-    queryFn: typeof getWorkouts;
-  });
+  return useQuery({ queryKey: workoutsKey, queryFn: getWorkouts });
 }
 
 export function useSaveWorkout() {
