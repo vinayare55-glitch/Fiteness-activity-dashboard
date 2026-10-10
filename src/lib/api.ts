@@ -22,7 +22,7 @@ export interface Workout {
   duration: number; // minutes
   date: string; // YYYY-MM-DD
   calories: number;
-  notes?: string;
+  notes?: string | undefined;
 }
 
 export type WorkoutInput = Omit<Workout, "id">;

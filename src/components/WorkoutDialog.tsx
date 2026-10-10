@@ -61,7 +61,7 @@ export function WorkoutDialog({ open, onOpenChange, workout }: Props) {
     }
   });
 
-  const Err = ({ msg }: { msg?: string }) => (msg ? <p className="text-xs text-destructive">{msg}</p> : null);
+  const Err = ({ msg }: { msg?: string | undefined }) => (msg ? <p className="text-xs text-destructive">{msg}</p> : null);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
