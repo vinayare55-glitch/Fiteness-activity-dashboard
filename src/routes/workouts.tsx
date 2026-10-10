@@ -34,12 +34,12 @@ const str = (v: unknown) => (typeof v === "string" && v ? v : undefined);
 
 export const Route = createFileRoute("/workouts")({
   validateSearch: (s: Record<string, unknown>): WorkoutSearch => ({
-    q: str(s.q),
-    category: CATEGORIES.includes(s.category as never) ? (s.category as string) : undefined,
-    from: str(s.from),
-    to: str(s.to),
-    sort: SORTS.includes(s.sort as Sort) ? (s.sort as Sort) : undefined,
-    dir: s.dir === "asc" ? "asc" : undefined,
+    q: str(s["q"]),
+    category: CATEGORIES.includes(s["category"] as never) ? (s["category"] as string) : undefined,
+    from: str(s["from"]),
+    to: str(s["to"]),
+    sort: SORTS.includes(s["sort"] as Sort) ? (s["sort"] as Sort) : undefined,
+    dir: s["dir"] === "asc" ? "asc" : undefined,
   }),
   head: () => ({
     meta: [

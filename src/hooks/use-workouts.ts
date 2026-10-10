@@ -18,7 +18,7 @@ export function useWorkouts() {
 export function useSaveWorkout() {
   const qc = useQueryClient();
   return useMutation({
-    mutationFn: ({ id, data }: { id?: string; data: WorkoutInput }) =>
+    mutationFn: ({ id, data }: { id?: string | undefined; data: WorkoutInput }) =>
       id ? updateWorkout(id, data) : createWorkout(data),
     onSuccess: () => qc.invalidateQueries({ queryKey: workoutsKey }),
   });
