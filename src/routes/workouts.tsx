@@ -22,12 +22,12 @@ const SORTS = ["date", "calories", "duration"] as const;
 type Sort = (typeof SORTS)[number];
 
 interface WorkoutSearch {
-  q?: string;
-  category?: string;
-  from?: string;
-  to?: string;
-  sort?: Sort;
-  dir?: "asc" | "desc";
+  q?: string | undefined;
+  category?: string | undefined;
+  from?: string | undefined;
+  to?: string | undefined;
+  sort?: Sort | undefined;
+  dir?: "asc" | "desc" | undefined;
 }
 
 const str = (v: unknown) => (typeof v === "string" && v ? v : undefined);
