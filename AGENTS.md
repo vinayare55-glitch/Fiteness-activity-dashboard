@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Workout data goes through src/lib/api.ts only (localStorage today); swap bodies for fetch to /api/workouts without touching hooks.
